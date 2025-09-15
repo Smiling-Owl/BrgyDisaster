@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="admin.css">
+  <script defer src="back.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="landingPage.html" class="back-btn">Back</a>
+    <ul class="nav-links">
+      <li><a href="aboutUs.html">About Us</a></li>
+      <li><a href="report.html">Report</a></li>
+      <li><a href="#">Help</a></li>
+      <li class="dropdown">
+        <a href="contact.html">Links ▾</a>
+      </li>
+    </ul>
+    <button class="admin-login-btn">ADMIN LOGIN</button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="admin-section">
+    <!-- Admin Login Title -->
+    <h1 class="admin-title">Admin Login</h1>
+    
+    <!-- Login Form Container -->
+    <div class="login-container">
+      <form class="login-form" id="adminForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="logo">
+        <div class="logo-shape shape-1"></div>
+        <div class="logo-shape shape-2"></div>
+        <div class="logo-icon">👤</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

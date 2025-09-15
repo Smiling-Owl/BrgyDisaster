@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Page</title>
+  <link rel="stylesheet" href="report.css">
+  <script defer src="back.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="landingPage.html" class="back-btn">Back</a> 
+    <ul class="nav-links">
+      <li><a href="aboutUs.html">About Us</a></li> 
+      <li><a href="report.html">Report</a></li>
+      <li><a href="#">Help</a></li>
+      <li class="dropdown"><a href="contact.html">Contacts ▾</a></li>
+    </ul>
+  </nav>
+
+  <!-- Report Form Section -->
+   
+  <main class="report-section">
+    <h1>Make a report</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="contact">Contact Info:</label>
+      <input type="text" id="contact" name="contact">
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location">
+
+      <label for="description">Description (What would you like to report)</label>
+      <textarea id="description" name="description"></textarea>
+
+      <button type="submit" class="submit-btn">Report</button>
+      <div class="hero">
+        
+      </div>
+    </form>
+  </main>
+
+  <!-- Popup Modal -->
+  <div id="popupModal" class="popup-modal">
+    <div class="popup-content">
+      <div class="popup-header">
+      </div>
+      <div class="popup-body">
+        <p>Is the provided information correct?</p>
+        <div class="popup-buttons">
+          <button id="confirmYes" class="btn-yes">Yes</button>
+          <button id="confirmNo" class="btn-no">No/Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>

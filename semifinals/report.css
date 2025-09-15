@@ -1,0 +1,261 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: url("julie-blake-edison-kEropcdIToc-unsplash.jpg") no-repeat center center/cover;
+  background-attachment: fixed; /* keeps image in place while scrolling */
+  color: #fff; /* text white so it’s readable */
+  line-height: 1.6;
+  overflow: hidden;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a64c5;
+  padding: 10px 20px;
+  color: white;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  color: #0a64c5;
+  border: 2px solid #0a64c5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #0a64c5, #0056b3);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-login {
+  background: white;
+  color: #0a64c5;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Report Section */
+.report-section {
+  padding: 50px;
+  max-width: 800px;
+}
+
+.report-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #e4e4e4;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  border-radius: 12px;
+}
+
+.submit-btn {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0a64c5, #0056b3);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(10, 100, 197, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(10, 100, 197, 0.3);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 90px;
+  margin-left: 220px;
+  position: relative;
+  background: none; /* remove duplicate background */
+  transition: margin-left 0.3s ease;
+}
+
+/* Popup Modal Styles */
+.popup-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.popup-content {
+  background-color: #f8f9fa;
+  margin: 15% auto;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-header {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.popup-icon {
+  font-size: 24px;
+  color: #6f42c1;
+}
+
+.popup-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.popup-body {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.popup-body p {
+  margin: 0 0 25px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #0a64c5, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.btn-yes:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+}
+
+.btn-no {
+  background: white;
+  color: #0a64c5;
+  border: 2px solid #0a64c5;
+  padding: 10px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.btn-no:hover {
+  background: #0a64c5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+}

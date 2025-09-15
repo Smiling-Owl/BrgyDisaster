@@ -1,0 +1,86 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+/* Navbar (reuse admin styles) */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a64c5;
+  padding: 15px 30px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn { background: linear-gradient(135deg,#ffffff,#f0f0f0); color:#0a64c5; border:2px solid #0a64c5; padding:10px 20px; border-radius:25px; cursor:pointer; font-weight:bold; text-decoration:none; transition:all .3s ease; box-shadow:0 2px 5px rgba(0,0,0,.1) }
+.back-btn:hover { background: linear-gradient(135deg,#0a64c5,#0056b3); color:#fff; transform:translateY(-2px); box-shadow:0 4px 15px rgba(10,100,197,.3) }
+
+.page-title { font-size: 1.4rem; font-weight: 700; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; transition: .2s; }
+.nav-link:hover { background: rgba(255,255,255,.15); }
+.nav-link.active { background: transparent; color: #ffffff; }
+
+/* Main */
+.dashboard-main {
+  padding: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  padding: 16px;
+  grid-column: span 4;
+}
+
+.card h3, .card h4 { margin-bottom: 12px; color: #111827; }
+
+.span-2 { grid-column: span 12; }
+
+.placeholder {
+  height: 220px;
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    #e5e7eb,
+    #e5e7eb 10px,
+    #f3f4f6 10px,
+    #f3f4f6 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-weight: 600;
+}
+.placeholder.small { height: 120px; }
+.placeholder.medium { height: 160px; }
+
+@media (max-width: 900px) {
+  .card { grid-column: span 6; }
+  .span-2 { grid-column: span 12; }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(6, 1fr); }
+  .card, .span-2 { grid-column: span 6; }
+}

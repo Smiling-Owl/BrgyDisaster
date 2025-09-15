@@ -1,0 +1,223 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f0f0; /* fallback color */
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar Navbar */
+.navbar {
+  width: 220px;
+  background-color: #0d47a1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 15px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.collapsed {
+  width: 60px; /* keeps toggle visible */
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+/* Base Button Style */
+.btn {         
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 6px 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+/* Links */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  margin: 15px 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown {
+  display: none;
+  background: #1565c0;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.navbar ul li:hover .dropdown {
+  display: block;
+}
+
+/* Top Buttons Container */
+.top-buttons {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 1100;
+}
+
+/* Admin Button (Top Right) */
+.admin-login {
+  background: white;
+  color: #0a64c5;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+.admin-login:hover {
+  background: #0a64c5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+  border-color: #0a64c5;
+}
+
+.admin-login:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Sign Up Button - Same design as Admin Login */
+.admin-login.signup-btn {
+  background: white;
+  color: #0a64c5;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+.admin-login.signup-btn:hover {
+  background: #0a64c5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+  border-color: #0a64c5;
+}
+
+.admin-login.signup-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 90px;
+  margin-left: 220px;
+  position: relative;
+  background: url("julie-blake-edison-kEropcdIToc-unsplash.jpg") no-repeat center center/cover;
+  transition: margin-left 0.3s ease;
+}
+
+.navbar.collapsed ~ .hero {
+  margin-left: 60px; /* shift when sidebar collapses */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.hero-content h1 {
+  color: #ffffff; /* ensure the heading is white */
+}
+/* Buttons Container */
+.buttons {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  gap: 15px;                 /* space between buttons */
+  margin-top: 20px;
+}
+
+/* Base Button Style */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* About Button (Green) */
+.btn-about {
+  background: linear-gradient(135deg, #07225e, #000000);
+  color: #fff;
+}
+
+.btn-about:hover {
+  transform: scale(1.05);
+}
+
+/* Report Button (Red) */
+.btn-report {
+  background: linear-gradient(135deg, #07225e, #000000);
+  color: #fff;
+}
+
+.btn-report:hover {
+  transform: scale(1.05);
+}
+

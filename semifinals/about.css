@@ -1,0 +1,184 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 10;
+  padding: 10;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: url("julie-blake-edison-kEropcdIToc-unsplash.jpg") no-repeat center center/cover;
+  background-attachment: fixed; /* keeps image in place while scrolling */
+  color: #fff; /* text white so it’s readable */
+  line-height: 1.6;
+  overflow: hidden;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a64c5;
+  padding: 10px 20px;
+  color: white;
+}
+
+.back-btn {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  color: #0a64c5;
+  border: 2px solid #0a64c5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #0a64c5, #0056b3);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-login {
+  background: white;
+  color: #0a64c5;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+}
+
+.about-text {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  padding: 0;
+  margin: 0 0 25px 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f8f9fa;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  max-width: 550px;
+  font-weight: 400;
+  text-align: left;
+}
+
+
+.about-image img {
+  width: 180px;
+  height: auto;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* Primary CTA Button */
+.cta-button {
+  background: linear-gradient(135deg, #0a64c5, #0056b3);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(10, 100, 197, 0.4);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(10, 100, 197, 0.3);
+}
+
+/* Secondary Button */
+.secondary-button {
+  background: transparent;
+  color: #0a64c5;
+  border: 2px solid #0a64c5;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.secondary-button:hover {
+  background: #0a64c5;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(10, 100, 197, 0.3);
+}
+
+.secondary-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(10, 100, 197, 0.2);
+}

@@ -1,0 +1,13 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f7fb;color:#111}
+
+.navbar{background:#0a64c5;padding:12px 16px}
+.nav-tabs{list-style:none;display:flex;gap:12px}
+.tab{background:#fff;color:#0a64c5;text-decoration:none;padding:8px 18px;border-radius:4px;font-size:14px}
+.tab.active{background:#e8f1fd}
+
+.summary-main{max-width:900px;margin:28px auto;padding:0 16px}
+.summary-main h1{font-size:36px;margin-bottom:24px}
+.summary-list p{margin:14px 0;font-size:16px}
+.summary-list strong{font-weight:700}
+.summary-list em{color:#666}

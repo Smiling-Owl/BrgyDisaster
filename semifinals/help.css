@@ -1,0 +1,10 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f7fb;color:#1f2937;min-height:100vh}
+.help-nav{background:#0a64c5;padding:12px 16px}
+.back{color:#fff;text-decoration:none;font-weight:600}
+.back{background:linear-gradient(135deg,#ffffff,#f0f0f0);color:#0a64c5 !important;border:2px solid #0a64c5;padding:8px 16px;border-radius:20px;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+.help-main{max-width:900px;margin:24px auto;padding:0 16px}
+.help-main h1{font-size:32px;margin-bottom:12px}
+.help-main p{margin:10px 0}
+.help-list{margin:12px 18px}
+.help-list li{margin:6px 0}
