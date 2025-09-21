@@ -14,34 +14,116 @@
     <ul class="nav-links">
       <li><a href="aboutUs.html">About Us</a></li> 
       <li><a href="report.html">Report</a></li>
-      <li><a href="#">Help</a></li>
+      <li><a href="userReportHistory.html">My Reports</a></li>
+      <li><a href="help.html">Help</a></li>
       <li class="dropdown"><a href="contact.html">Contacts ▾</a></li>
     </ul>
   </nav>
 
-  <!-- Report Form Section -->
-   
-  <main class="report-section">
-    <h1>Make a report</h1>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
+  <!-- Google Form Style Container -->
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Disaster Report Form</h1>
+      <p class="form-description">Please fill out the form below to report a disaster or emergency situation.</p>
+    </div>
 
-      <label for="contact">Contact Info:</label>
-      <input type="text" id="contact" name="contact">
-
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location">
-
-      <label for="description">Description (What would you like to report)</label>
-      <textarea id="description" name="description"></textarea>
-
-      <button type="submit" class="submit-btn">Report</button>
-      <div class="hero">
+    <form class="google-form" id="reportForm">
+      <div class="form-section">
+        <h2>Personal Information</h2>
         
+        <div class="form-group">
+          <label for="name" class="form-label">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact" class="form-label">Contact Information <span class="required">*</span></label>
+          <input type="text" id="contact" name="contact" class="form-input" placeholder="Phone number or email" required>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Incident Details</h2>
+        
+        <div class="form-group">
+          <label for="location" class="form-label">Location <span class="required">*</span></label>
+          <input type="text" id="location" name="location" class="form-input" placeholder="Enter the exact location of the incident" required>
+        </div>
+
+        <div class="form-group">
+          <label for="incident-type" class="form-label">Type of Incident <span class="required">*</span></label>
+          <select id="incident-type" name="incident-type" class="form-select" required>
+            <option value="">Select incident type</option>
+            <option value="flood">Flood</option>
+            <option value="fire">Fire</option>
+            <option value="earthquake">Earthquake</option>
+            <option value="typhoon">Typhoon</option>
+            <option value="landslide">Landslide</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="severity" class="form-label">Severity Level <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="severity" value="low" required>
+              <span class="radio-text">Low - Minor damage, no immediate danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="medium" required>
+              <span class="radio-text">Medium - Moderate damage, some danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="high" required>
+              <span class="radio-text">High - Severe damage, immediate danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="critical" required>
+              <span class="radio-text">Critical - Life-threatening situation</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="form-label">Detailed Description <span class="required">*</span></label>
+          <textarea id="description" name="description" class="form-textarea" placeholder="Please provide a detailed description of the incident, including what you observed, when it occurred, and any other relevant information." rows="4" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Additional Information</h2>
+        
+        <div class="form-group">
+          <label for="witnesses" class="form-label">Number of People Affected</label>
+          <input type="number" id="witnesses" name="witnesses" class="form-input" placeholder="Estimated number of people affected" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="urgency" class="form-label">Urgency Level <span class="required">*</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="immediate">
+              <span class="checkbox-text">Immediate response needed</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="medical">
+              <span class="checkbox-text">Medical assistance required</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="evacuation">
+              <span class="checkbox-text">Evacuation may be necessary</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary" onclick="clearForm()">Clear Form</button>
+        <button type="submit" class="btn-primary">Submit Report</button>
       </div>
     </form>
-  </main>
+  </div>
 
   <!-- Popup Modal -->
   <div id="popupModal" class="popup-modal">

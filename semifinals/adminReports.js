@@ -1,33 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const verifyBtn = document.getElementById('verifyBtn');
-  const dismissBtn = document.getElementById('dismissBtn');
-  const verifyModal = document.getElementById('verifyModal');
-  const dismissModal = document.getElementById('dismissModal');
+// Filter and search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const reportCards = document.querySelectorAll('.report-card');
+    const totalCount = document.getElementById('total-count');
+    const pendingCount = document.getElementById('pending-count');
+    const verifiedCount = document.getElementById('verified-count');
 
-  if (verifyBtn && verifyModal) {
-    verifyBtn.addEventListener('click', () => {
-      verifyModal.style.display = 'flex';
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            filterReports(filter);
+        });
     });
-  }
 
-  if (dismissBtn && dismissModal) {
-    dismissBtn.addEventListener('click', () => {
-      dismissModal.style.display = 'flex';
-    });
-  }
+    // Filter reports based on status
+    function filterReports(status) {
+        console.log('Filtering by status:', status);
+        reportCards.forEach(card => {
+            const cardStatus = card.getAttribute('data-status');
+            console.log('Card status:', cardStatus, 'Should show:', status === 'all' || cardStatus === status);
+            
+            if (status === 'all' || cardStatus === status) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        updateStats();
+    }
 
-  document.querySelectorAll('[data-close]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (verifyModal) verifyModal.style.display = 'none';
-      if (dismissModal) dismissModal.style.display = 'none';
-    });
-  });
+    // Update statistics
+    function updateStats() {
+        const visibleCards = Array.from(reportCards).filter(card => card.style.display !== 'none');
+        const pendingCards = visibleCards.filter(card => card.getAttribute('data-status') === 'pending');
+        const verifiedCards = visibleCards.filter(card => card.getAttribute('data-status') === 'verified');
+        
+        if (totalCount) totalCount.textContent = visibleCards.length;
+        if (pendingCount) pendingCount.textContent = pendingCards.length;
+        if (verifiedCount) verifiedCount.textContent = verifiedCards.length;
+    }
 
-  // Close modals when clicking outside content
-  [verifyModal, dismissModal].forEach(modal => {
-    if (!modal) return;
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-  });
+    // Initialize stats
+    updateStats();
 });
