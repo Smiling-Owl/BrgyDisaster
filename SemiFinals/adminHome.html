@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Home Page</title>
+  <link rel="stylesheet" href="adminHome.css">
+  <script defer src="back.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="landingPage.html" class="back-btn">Back</a>
+    <div class="nav-left">
+      <h2 class="page-title">Admin Home Page</h2>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+        <li><a href="adminReports.html" class="nav-link">Report</a></li>
+        <li><a href="adminSummary.html" class="nav-link">Summary</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+      <h1 class="welcome-title">Welcome, Admin</h1>
+      <button class="logout-btn" id="logoutBtn">Log Out</button>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <div class="logo">
+        <div class="logo-shape shape-1"></div>
+        <div class="logo-shape shape-2"></div>
+        <div class="logo-icon">👤</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="adminHome.js"></script>
+</body>
+</html>

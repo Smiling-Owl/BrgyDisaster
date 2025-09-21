@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Page</title>
+  <link rel="stylesheet" href="report.css">
+  <script defer src="back.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="landingPage.html" class="back-btn">Back</a> 
+    <ul class="nav-links">
+      <li><a href="aboutUs.html">About Us</a></li> 
+      <li><a href="report.html">Report</a></li>
+      <li><a href="userReportHistory.html">My Reports</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li class="dropdown"><a href="contact.html">Contacts ▾</a></li>
+    </ul>
+  </nav>
+
+  <!-- Google Form Style Container -->
+  <div class="form-container">
+    <div class="form-header">
+      <h1>Disaster Report Form</h1>
+      <p class="form-description">Please fill out the form below to report a disaster or emergency situation.</p>
+    </div>
+
+    <form class="google-form" id="reportForm">
+      <div class="form-section">
+        <h2>Personal Information</h2>
+        
+        <div class="form-group">
+          <label for="name" class="form-label">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact" class="form-label">Contact Information <span class="required">*</span></label>
+          <input type="text" id="contact" name="contact" class="form-input" placeholder="Phone number or email" required>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Incident Details</h2>
+        
+        <div class="form-group">
+          <label for="location" class="form-label">Location <span class="required">*</span></label>
+          <input type="text" id="location" name="location" class="form-input" placeholder="Enter the exact location of the incident" required>
+        </div>
+
+        <div class="form-group">
+          <label for="incident-type" class="form-label">Type of Incident <span class="required">*</span></label>
+          <select id="incident-type" name="incident-type" class="form-select" required>
+            <option value="">Select incident type</option>
+            <option value="flood">Flood</option>
+            <option value="fire">Fire</option>
+            <option value="earthquake">Earthquake</option>
+            <option value="typhoon">Typhoon</option>
+            <option value="landslide">Landslide</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="severity" class="form-label">Severity Level <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="severity" value="low" required>
+              <span class="radio-text">Low - Minor damage, no immediate danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="medium" required>
+              <span class="radio-text">Medium - Moderate damage, some danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="high" required>
+              <span class="radio-text">High - Severe damage, immediate danger</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="severity" value="critical" required>
+              <span class="radio-text">Critical - Life-threatening situation</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="form-label">Detailed Description <span class="required">*</span></label>
+          <textarea id="description" name="description" class="form-textarea" placeholder="Please provide a detailed description of the incident, including what you observed, when it occurred, and any other relevant information." rows="4" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Additional Information</h2>
+        
+        <div class="form-group">
+          <label for="witnesses" class="form-label">Number of People Affected</label>
+          <input type="number" id="witnesses" name="witnesses" class="form-input" placeholder="Estimated number of people affected" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="urgency" class="form-label">Urgency Level <span class="required">*</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="immediate">
+              <span class="checkbox-text">Immediate response needed</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="medical">
+              <span class="checkbox-text">Medical assistance required</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="urgency" value="evacuation">
+              <span class="checkbox-text">Evacuation may be necessary</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary" onclick="clearForm()">Clear Form</button>
+        <button type="submit" class="btn-primary">Submit Report</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popupModal" class="popup-modal">
+    <div class="popup-content">
+      <div class="popup-header">
+      </div>
+      <div class="popup-body">
+        <p>Is the provided information correct?</p>
+        <div class="popup-buttons">
+          <button id="confirmYes" class="btn-yes">Yes</button>
+          <button id="confirmNo" class="btn-no">No/Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>
