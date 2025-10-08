@@ -29,92 +29,125 @@
 
     <form class="google-form" id="reportForm">
       <div class="form-section">
-        <h2>Personal Information</h2>
+        <h2>Report Incident</h2>
         
         <div class="form-group">
-          <label for="name" class="form-label">Name <span class="required">*</span></label>
-          <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+          <label for="reporter-name" class="form-label">Reporter Name <span class="required">*</span></label>
+          <input type="text" id="reporter-name" name="reporter-name" class="form-input" placeholder="Enter your full name" required>
         </div>
 
         <div class="form-group">
-          <label for="contact" class="form-label">Contact Information <span class="required">*</span></label>
-          <input type="text" id="contact" name="contact" class="form-input" placeholder="Phone number or email" required>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h2>Incident Details</h2>
-        
-        <div class="form-group">
-          <label for="location" class="form-label">Location <span class="required">*</span></label>
-          <input type="text" id="location" name="location" class="form-input" placeholder="Enter the exact location of the incident" required>
+          <label for="date" class="form-label">Date</label>
+          <input type="date" id="date" name="date" class="form-input" required>
         </div>
 
         <div class="form-group">
-          <label for="incident-type" class="form-label">Type of Incident <span class="required">*</span></label>
-          <select id="incident-type" name="incident-type" class="form-select" required>
-            <option value="">Select incident type</option>
+          <label for="time" class="form-label">Time</label>
+          <input type="time" id="time" name="time" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="disaster-category" class="form-label">Disaster Category <span class="required">*</span></label>
+          <select id="disaster-category" name="disaster-category" class="form-select" required>
+            <option value="">Select Category</option>
             <option value="flood">Flood</option>
             <option value="fire">Fire</option>
             <option value="earthquake">Earthquake</option>
             <option value="typhoon">Typhoon</option>
             <option value="landslide">Landslide</option>
+            <option value="storm">Storm</option>
+            <option value="drought">Drought</option>
             <option value="other">Other</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="severity" class="form-label">Severity Level <span class="required">*</span></label>
-          <div class="radio-group">
-            <label class="radio-label">
-              <input type="radio" name="severity" value="low" required>
-              <span class="radio-text">Low - Minor damage, no immediate danger</span>
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="severity" value="medium" required>
-              <span class="radio-text">Medium - Moderate damage, some danger</span>
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="severity" value="high" required>
-              <span class="radio-text">High - Severe damage, immediate danger</span>
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="severity" value="critical" required>
-              <span class="radio-text">Critical - Life-threatening situation</span>
-            </label>
-          </div>
+          <label for="barangay" class="form-label">Barangay <span class="required">*</span></label>
+          <input type="text" id="barangay" name="barangay" class="form-input" placeholder="Enter barangay name" required>
         </div>
 
         <div class="form-group">
-          <label for="description" class="form-label">Detailed Description <span class="required">*</span></label>
-          <textarea id="description" name="description" class="form-textarea" placeholder="Please provide a detailed description of the incident, including what you observed, when it occurred, and any other relevant information." rows="4" required></textarea>
+          <label for="location" class="form-label">Location <span class="required">*</span></label>
+          <input type="text" id="location" name="location" class="form-input" placeholder="Pin location or enter address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="areas-affected" class="form-label">Areas Affected</label>
+          <input type="text" id="areas-affected" name="areas-affected" class="form-input" placeholder="e.g., Purok 1, Purok 2, Main Street">
         </div>
       </div>
 
       <div class="form-section">
-        <h2>Additional Information</h2>
+        <h2>Affected Population</h2>
         
         <div class="form-group">
-          <label for="witnesses" class="form-label">Number of People Affected</label>
-          <input type="number" id="witnesses" name="witnesses" class="form-input" placeholder="Estimated number of people affected" min="0">
+          <label for="affected-individuals" class="form-label">Number of Affected Individuals</label>
+          <input type="number" id="affected-individuals" name="affected-individuals" class="form-input" placeholder="Enter number" min="0">
         </div>
 
         <div class="form-group">
-          <label for="urgency" class="form-label">Urgency Level <span class="required">*</span></label>
-          <div class="checkbox-group">
-            <label class="checkbox-label">
-              <input type="checkbox" name="urgency" value="immediate">
-              <span class="checkbox-text">Immediate response needed</span>
+          <label for="affected-families" class="form-label">Number of Affected Families</label>
+          <input type="number" id="affected-families" name="affected-families" class="form-input" placeholder="Enter number" min="0">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="minors" class="form-label">Minors</label>
+            <input type="number" id="minors" name="minors" class="form-input" value="0" min="0">
+          </div>
+          <div class="form-group half-width">
+            <label for="seniors" class="form-label">Seniors</label>
+            <input type="number" id="seniors" name="seniors" class="form-input" value="0" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half-width">
+            <label for="pregnant" class="form-label">Pregnant</label>
+            <input type="number" id="pregnant" name="pregnant" class="form-input" value="0" min="0">
+          </div>
+          <div class="form-group half-width">
+            <label for="lactating" class="form-label">Lactating</label>
+            <input type="number" id="lactating" name="lactating" class="form-input" value="0" min="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="injured" class="form-label">Number of Injured</label>
+          <input type="number" id="injured" name="injured" class="form-input" placeholder="Enter number" min="0">
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h2>Damage & Evacuation</h2>
+        <h3>Damage Assessment</h3>
+        
+        <div class="form-group">
+          <label for="damage-description" class="form-label">Damage Description</label>
+          <textarea id="damage-description" name="damage-description" class="form-textarea" placeholder="Describe the extent of damage to properties, infrastructure, etc." rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="evacuation-needed" class="form-label">Evacuation Required</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="evacuation-needed" value="yes">
+              <span class="radio-text">Yes</span>
             </label>
-            <label class="checkbox-label">
-              <input type="checkbox" name="urgency" value="medical">
-              <span class="checkbox-text">Medical assistance required</span>
+            <label class="radio-label">
+              <input type="radio" name="evacuation-needed" value="no">
+              <span class="radio-text">No</span>
             </label>
-            <label class="checkbox-label">
-              <input type="checkbox" name="urgency" value="evacuation">
-              <span class="checkbox-text">Evacuation may be necessary</span>
+            <label class="radio-label">
+              <input type="radio" name="evacuation-needed" value="partial">
+              <span class="radio-text">Partial</span>
             </label>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="additional-info" class="form-label">Additional Information</label>
+          <textarea id="additional-info" name="additional-info" class="form-textarea" placeholder="Any other relevant information about the incident" rows="3"></textarea>
         </div>
       </div>
 

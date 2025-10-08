@@ -3,16 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Times New Roman", serif;
 }
 body {
   margin: 10;
   padding: 10;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  background: url("julie-blake-edison-kEropcdIToc-unsplash.jpg") no-repeat center center/cover;
-  background-attachment: fixed; /* keeps image in place while scrolling */
-  color: #fff; /* text white so it’s readable */
+  font-family: "Times New Roman", serif;
+  background: #858585;
+  color: #fff; /* text white so it's readable */
   line-height: 1.6;
   overflow: hidden;
 }
@@ -21,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #0a64c5;
+  background: #00008B;
   padding: 10px 20px;
   color: white;
 }

@@ -9,81 +9,28 @@
 </head>
 <body>
   <nav class="navbar">
-    <a href="adminReports.html" class="back-btn">Back</a>
-    <h2 class="nav-title">Report Details</h2>
     <ul class="nav-links">
-      <li><a href="adminReports.html" class="nav-link">Reports</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+      <li><a href="adminHome.html" class="nav-link active">Admin Home Page</a></li>
       <li><a href="adminSummary.html" class="nav-link">Summary</a></li>
     </ul>
   </nav>
 
   <main class="details-main">
-    <div class="details-container">
-      <div class="details-card" id="reportDetailsCard">
-        <div class="card-header">
-          <span class="status-badge" id="statusBadge">Loading...</span>
-          <span class="report-id" id="reportId">#000000</span>
-        </div>
-        
-        <div class="card-content">
-          <h3 id="reportTitle">Loading Report Details...</h3>
-          
-          <div class="info-section">
-            <h4>Personal Information</h4>
-            <div class="info-grid">
-              <div class="info-item">
-                <span class="info-label">👤 Reporter Name:</span>
-                <span class="info-value" id="reporterName">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">📞 Contact Information:</span>
-                <span class="info-value" id="contactInfo">-</span>
-              </div>
-            </div>
-          </div>
+    <h2>Report Details</h2>
 
-          <div class="info-section">
-            <h4>Incident Details</h4>
-            <div class="info-grid">
-              <div class="info-item">
-                <span class="info-label">📍 Location:</span>
-                <span class="info-value" id="location">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">🚨 Incident Type:</span>
-                <span class="info-value" id="incidentType">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">⚠️ Severity Level:</span>
-                <span class="info-value" id="severity">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">🚨 Urgency Level:</span>
-                <span class="info-value" id="urgency">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">👥 People Affected:</span>
-                <span class="info-value" id="peopleAffected">-</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">📅 Submitted:</span>
-                <span class="info-value" id="submittedDate">-</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="info-section">
-            <h4>Description</h4>
-            <div class="description-box" id="description">
-              Loading description...
-            </div>
-          </div>
-        </div>
-
-        <div class="card-actions" id="actionButtons">
-          <button id="verifyBtn" class="btn primary">Verify Report</button>
-          <button id="dismissBtn" class="btn outline">Dismiss Report</button>
-        </div>
+    <div class="details-card">
+      <div class="header">Reported Location, Reporter</div>
+      <div class="content">
+        <p><strong>Reporter Name:</strong> Reporter Name</p>
+        <p><strong>Reporter Contact Info:</strong> reporter20@gmail.com</p>
+        <p><strong>Reporting Location:</strong> Place</p>
+        <p><strong>Report Description</strong></p>
+        <div class="desc-placeholder">asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+      </div>
+      <div class="actions">
+        <button id="verifyBtn" class="btn primary">Verify</button>
+        <button id="dismissBtn" class="btn outline">Dismiss</button>
       </div>
     </div>
   </main>
@@ -91,16 +38,12 @@
   <!-- Verify Modal -->
   <div id="verifyModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3>Verify Report</h3>
-        <button class="close-btn" data-close>&times;</button>
-      </div>
+      <div class="modal-header"></div>
       <div class="modal-body">
-        <p>Are you sure you want to verify this report?</p>
-        <p class="modal-subtitle">This will mark the report as verified and notify the reporter.</p>
+        <p>Verify Report?</p>
         <div class="modal-actions">
-          <button id="confirmVerify" class="btn primary">Yes, Verify</button>
-          <button class="btn outline" data-close>Cancel</button>
+          <button class="btn primary" data-close>Yes</button>
+          <button class="btn outline" data-close>No/Go Back</button>
         </div>
       </div>
     </div>
@@ -109,22 +52,17 @@
   <!-- Dismiss Modal -->
   <div id="dismissModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3>Dismiss Report</h3>
-        <button class="close-btn" data-close>&times;</button>
-      </div>
+      <div class="modal-header"></div>
       <div class="modal-body">
-        <p>Are you sure you want to dismiss this report?</p>
-        <p class="modal-subtitle">This will mark the report as dismissed and notify the reporter.</p>
+        <p>Dismiss Report?</p>
         <div class="modal-actions">
-          <button id="confirmDismiss" class="btn primary">Yes, Dismiss</button>
-          <button class="btn outline" data-close>Cancel</button>
+          <button class="btn primary" data-close>Yes</button>
+          <button class="btn outline" data-close>No/Go Back</button>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="reportDataManager.js"></script>
-  <script src="adminReportDetails.js"></script>
+  <script src="adminReports.js"></script>
 </body>
 </html>

@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     hour12: true
                 })
             }
+            
         ];
         
         // Add test reports to data manager

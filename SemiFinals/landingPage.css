@@ -96,65 +96,6 @@ html, body {
   gap: 15px;
   z-index: 1100;
 }
-
-/* Admin Button (Top Right) */
-.admin-login {
-  background: white;
-  color: #0a64c5;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border: 2px solid transparent;
-}
-
-.admin-login:hover {
-  background: #0a64c5;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
-  border-color: #0a64c5;
-}
-
-.admin-login:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Sign Up Button - Same design as Admin Login */
-.admin-login.signup-btn {
-  background: white;
-  color: #0a64c5;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border: 2px solid transparent;
-}
-
-.admin-login.signup-btn:hover {
-  background: #0a64c5;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(10, 100, 197, 0.3);
-  border-color: #0a64c5;
-}
-
-.admin-login.signup-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
 /* Hero Section */
 .hero {
   height: 100vh;
