@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmNoBtn = document.getElementById('confirmNo');
     const submitBtn = document.querySelector('.btn-primary');
 
+    // Initialize sample data if needed
+    if (window.reportDataManager) {
+        window.reportDataManager.initializeSampleData();
+    }
+
     // Handle form submission
     if (form) {
         form.addEventListener('submit', function(e) {
@@ -24,28 +29,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle "Yes" button click
     if (confirmYesBtn) {
         confirmYesBtn.addEventListener('click', function() {
-            // Hide the popup
-            popupModal.style.display = 'none';
-            
-            // Show success message
-            alert('Report submitted successfully! Thank you for your feedback.');
-            
-            // Reset the form
-            if (form) {
-                form.reset();
-            }
-            
-            // Log form data
-            console.log('Form submitted with data:', {
-                name: document.getElementById('name')?.value,
-                contact: document.getElementById('contact')?.value,
-                location: document.getElementById('location')?.value,
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name')?.value.trim(),
+                contact: document.getElementById('contact')?.value.trim(),
+                location: document.getElementById('location')?.value.trim(),
                 incidentType: document.getElementById('incident-type')?.value,
                 severity: document.querySelector('input[name="severity"]:checked')?.value,
-                description: document.getElementById('description')?.value,
-                witnesses: document.getElementById('witnesses')?.value,
+                description: document.getElementById('description')?.value.trim(),
+                witnesses: parseInt(document.getElementById('witnesses')?.value) || 0,
                 urgency: Array.from(document.querySelectorAll('input[name="urgency"]:checked')).map(cb => cb.value)
-            });
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.contact || !formData.location || 
+                !formData.incidentType || !formData.severity || !formData.description) {
+                alert('Please fill in all required fields.');
+                popupModal.style.display = 'none';
+                return;
+            }
+
+            // Save report using the data manager
+            if (window.reportDataManager) {
+                const newReport = window.reportDataManager.addReport(formData);
+                
+                // Hide the popup
+                popupModal.style.display = 'none';
+                
+                // Show success message with report ID
+                alert(`Report submitted successfully!\nReport ID: ${newReport.id}\nThank you for your feedback.`);
+                
+                // Reset the form
+                if (form) {
+                    form.reset();
+                }
+            } else {
+                alert('Error: Unable to save report. Please try again.');
+                popupModal.style.display = 'none';
+            }
         });
     }
 
