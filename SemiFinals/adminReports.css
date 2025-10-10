@@ -2,7 +2,8 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Times New Roman",serif}
 body{background:#858585;color:#1f2937}
 
-.navbar{background:#00008B;color:#fff;padding:15px 30px;box-shadow:0 2px 10px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;min-height:60px}
+.navbar{background:#00008B;color:#fff;padding:15px 30px;box-shadow:0 2px 10px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:space-between;min-height:60px;position:relative}
+.logo-img{height:48px;width:auto}
 .nav-title{font-size:1.6rem;font-weight:700;letter-spacing:.5px}
 .back-btn{background:linear-gradient(135deg,#ffffff,#f0f0f0);color:#0a64c5;border:2px solid #0a64c5;padding:10px 20px;border-radius:25px;cursor:pointer;font-weight:700;text-decoration:none;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.15);margin-right:10px}
 .back-btn:hover{background:linear-gradient(135deg,#0a64c5,#0056b3);color:#fff;transform:translateY(-2px);box-shadow:0 4px 15px rgba(10,100,197,.3)}

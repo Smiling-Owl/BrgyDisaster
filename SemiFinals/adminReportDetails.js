@@ -5,67 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize data manager
     if (window.reportDataManager) {
-        // Clear existing data and create fresh test data
-        console.log('Clearing existing data and creating fresh test reports...');
-        localStorage.removeItem('disasterReports');
-        window.reportDataManager.reports = [];
-        
-        // Create test reports with known data
-        const testReports = [
-            {
-                id: '#950573575',
-                name: 'gabss',
-                contact: '0129301293',
-                location: 'asdasd',
-                incidentType: 'fire',
-                severity: 'medium',
-                description: 'asdasdasd',
-                witnesses: 23,
-                urgency: ['medical'],
-                status: 'pending',
-                submittedAt: new Date().toISOString(),
-                submittedDate: new Date().toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                }),
-                submittedTime: new Date().toLocaleTimeString('en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
-                })
-            },
-            {
-                id: '#520954780',
-                name: 'gabss',
-                contact: '0129301293',
-                location: 'asdasd',
-                incidentType: 'earthquake',
-                severity: 'medium',
-                description: 'asdasdasd',
-                witnesses: 23,
-                urgency: ['medical'],
-                status: 'verified',
-                submittedAt: new Date().toISOString(),
-                submittedDate: new Date().toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                }),
-                submittedTime: new Date().toLocaleTimeString('en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
-                })
-            }
-        ];
-        
-        // Add test reports to data manager
-        window.reportDataManager.reports = testReports;
-        window.reportDataManager.saveReports();
-        
-        console.log('Created test reports:', testReports.map(r => ({ id: r.id, type: r.incidentType, status: r.status })));
-        
         if (reportId) {
             loadReportDetails(reportId);
         } else {

@@ -25,6 +25,21 @@ body {
   background: #00008B;
   padding: 10px 20px;
   color: white;
+  position: relative;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+}
+
+/* Center navbar content while keeping logo at left */
+.navbar .nav-links,
+.navbar .nav-title,
+.navbar .page-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .back-btn {

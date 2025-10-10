@@ -26,26 +26,55 @@ document.addEventListener('DOMContentLoaded', function() {
         confirmYesBtn.addEventListener('click', function() {
             // Hide the popup
             popupModal.style.display = 'none';
-            
+
+            // Collect form data based on current field IDs
+            const name = document.getElementById('reporter-name')?.value || 'Anonymous';
+            const barangay = document.getElementById('barangay')?.value || '';
+            const location = document.getElementById('location')?.value || '';
+            const incidentType = document.getElementById('disaster-category')?.value || 'other';
+            const date = document.getElementById('date')?.value || '';
+            const time = document.getElementById('time')?.value || '';
+            const damageDescription = document.getElementById('damage-description')?.value || '';
+            const additionalInfo = document.getElementById('additional-info')?.value || '';
+            const evacNeeded = document.querySelector('input[name="evacuation-needed"]:checked')?.value || 'no';
+            const affectedIndividuals = parseInt(document.getElementById('affected-individuals')?.value || '0', 10);
+
+            // Build description and urgency
+            const descriptionParts = [];
+            if (damageDescription) descriptionParts.push(`Damage: ${damageDescription}`);
+            if (additionalInfo) descriptionParts.push(`Info: ${additionalInfo}`);
+            if (date || time) descriptionParts.push(`When: ${date} ${time}`.trim());
+            if (barangay) descriptionParts.push(`Barangay: ${barangay}`);
+            const description = descriptionParts.join(' | ');
+            const urgency = evacNeeded === 'yes' || evacNeeded === 'partial' ? ['evacuation'] : [];
+
+            // Persist via shared data manager
+            let newReport = null;
+            if (window.reportDataManager) {
+                newReport = window.reportDataManager.addReport({
+                    name,
+                    contact: '',
+                    location,
+                    incidentType,
+                    severity: 'medium',
+                    description,
+                    witnesses: isNaN(affectedIndividuals) ? 0 : affectedIndividuals,
+                    urgency
+                });
+            }
+
             // Show success message
             alert('Report submitted successfully! Thank you for your feedback.');
-            
+
             // Reset the form
             if (form) {
                 form.reset();
             }
-            
-            // Log form data
-            console.log('Form submitted with data:', {
-                name: document.getElementById('name')?.value,
-                contact: document.getElementById('contact')?.value,
-                location: document.getElementById('location')?.value,
-                incidentType: document.getElementById('incident-type')?.value,
-                severity: document.querySelector('input[name="severity"]:checked')?.value,
-                description: document.getElementById('description')?.value,
-                witnesses: document.getElementById('witnesses')?.value,
-                urgency: Array.from(document.querySelectorAll('input[name="urgency"]:checked')).map(cb => cb.value)
-            });
+
+            // If a new report was created, go to admin details for that report
+            if (newReport && newReport.id) {
+                window.location.href = `adminReportDetails.html?id=${encodeURIComponent(newReport.id)}`;
+            }
         });
     }
 

@@ -17,18 +17,26 @@
   </nav>
 
   <main class="details-main">
-    <h2>Report Details</h2>
+    <h2 id="reportTitle">Admin Report Details</h2>
 
-    <div class="details-card">
-      <div class="header">Reported Location, Reporter</div>
-      <div class="content">
-        <p><strong>Reporter Name:</strong> Reporter Name</p>
-        <p><strong>Reporter Contact Info:</strong> reporter20@gmail.com</p>
-        <p><strong>Reporting Location:</strong> Place</p>
-        <p><strong>Report Description</strong></p>
-        <div class="desc-placeholder">asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd</div>
+    <div id="reportDetailsCard" class="details-card">
+      <div class="header">
+        <span id="statusBadge" class="status-badge pending">Pending</span>
+        <span id="reportId" style="margin-left:10px">#</span>
       </div>
-      <div class="actions">
+      <div class="content">
+        <p><strong>Reporter Name:</strong> <span id="reporterName">-</span></p>
+        <p><strong>Reporter Contact Info:</strong> <span id="contactInfo">-</span></p>
+        <p><strong>Reporting Location:</strong> <span id="location">-</span></p>
+        <p><strong>Incident Type:</strong> <span id="incidentType">-</span></p>
+        <p><strong>Severity:</strong> <span id="severity">-</span></p>
+        <p><strong>Urgency:</strong> <span id="urgency">-</span></p>
+        <p><strong>People Affected:</strong> <span id="peopleAffected">0</span></p>
+        <p><strong>Submitted:</strong> <span id="submittedDate">-</span></p>
+        <p><strong>Report Description</strong></p>
+        <div id="description" class="desc-placeholder">-</div>
+      </div>
+      <div id="actionButtons" class="actions">
         <button id="verifyBtn" class="btn primary">Verify</button>
         <button id="dismissBtn" class="btn outline">Dismiss</button>
       </div>
@@ -63,6 +71,7 @@
     </div>
   </div>
 
-  <script src="adminReports.js"></script>
+  <script src="reportDataManager.js"></script>
+
 </body>
 </html>
